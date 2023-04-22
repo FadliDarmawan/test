@@ -1,6 +1,6 @@
 import EventEmitter from 'events';
 import puppeteer from 'puppeteer';
-
+import wjs from 'wjs'
 import moduleRaid from '@pedroslopez/moduleraid/moduleraid';
 
 import Util from './util/Util.js';
@@ -81,9 +81,7 @@ class Client extends EventEmitter {
             timeout: 0,
             referer: 'https://whatsapp.com/'
         });
-        await page.addScriptTag({
-            path: require.resolve('wjs')
-        })
+        await page.addScriptTag({ path: wjs });
 
         await page.waitForFunction(() => window.WPP?.isReady)
 
