@@ -9,7 +9,7 @@ contact:
 
 'use strict';
 
-import Constants from './src/util/Constants';
+import * as Constants from './src/util/Constants';
 
 // Exporting all modules
 export { default as Client } from './src/Client';
